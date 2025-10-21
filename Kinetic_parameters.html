@@ -372,15 +372,16 @@ display: none;
 <p>Este es un código experimental para generar un gráfico del ajuste del
 modelo de Michaelis-Menten con regresión no lineal por mínimos cuadrados
 y obtener constantes cinéticas (constante de Michaelis y velocidad
-máxima). Para descargar el código en R, entre en la url <a href="https://github.com/mariana-mb4/Enzyme-kinetics" class="uri">https://github.com/mariana-mb4/Enzyme-kinetics</a></p>
+máxima). Para descargar el código en R, entre en la url <a href="https://github.com/mariana-mb4/Enzyme-kinetics" class="uri">https://github.com/mariana-mb4/Enzyme-kinetics</a>.</p>
 <div id="librerías" class="section level3">
 <h3>Librerías</h3>
-<p>Instalar librerías si es que no se tienen ya instaladas</p>
-<p>La librería drc es para modelos no lineales de dosis-respuesta La
-librería renz es solamente para cinetica enzimatica La librería
-tidyverse y dplyr es de uso común para múltiples funciones Y la librería
-ggplot2 es una de las más usadas para visualizaci´no de datos y
-generación de plots</p>
+<p>Instalar librerías si es que aún no están instaladas.</p>
+<p>La librería drc es para modelos no lineales de dosis-respuesta.</p>
+<p>La librería renz es solamente para cinetica enzimatica.</p>
+<p>La librería tidyverse y dplyr es de uso común para múltiples
+funciones.</p>
+<p>Y la librería ggplot2 es una de las más usadas para visualización de
+datos y generación de plots.</p>
 <pre class="r"><code># install.packages(&quot;drc&quot;)
 # install.packages(&quot;renz&quot;)
 # install.packages(&quot;tidyverse&quot;)
@@ -389,9 +390,9 @@ generación de plots</p>
 </div>
 <div id="dataframe" class="section level2">
 <h2>Dataframe</h2>
-<p>Ahora llamamos a las librerías instaladas y creamos el dataframe Se
-puede hacer manualmente en R, o extraerlo de un archivo delimitado por
-comas (.csv), en la pestaña de Enviroment, dando clicl al recuadro
+<p>Ahora llamamos a las librerías instaladas y creamos el dataframe.</p>
+<p>Se puede hacer manualmente en R, o extraerlo de un archivo delimitado
+por comas (.csv), en la pestaña de Enviroment, dando clicl al recuadro
 Import Dataset.</p>
 <p>Como el dataframe se genera el formato “ancho”, usando pivot_longer()
 lo pasamos a formato “largo”, para que R pueda graficar correctamente
@@ -421,7 +422,7 @@ datos_2 &lt;- datos_1 |&gt;
     values_to = &quot;v0&quot;        # Crea la nueva columna para los valores
   )</code></pre>
 <p>Calculamos la media y la desviación estándar para poder colocarlas en
-nuestro gráfico de Michaelis-Menten</p>
+nuestro gráfico de Michaelis-Menten.</p>
 <pre class="r"><code># Calcular la media y la desviacion estandar
 datos_resumen &lt;- datos_2 |&gt; group_by(Concentracion) |&gt; 
   summarise(media_v0 = mean(v0, na.rm = TRUE),
@@ -515,10 +516,10 @@ dir.MM(datos_2[ , c(1,3)], unit_S = &quot;mM&quot;, unit_v = &quot;nM/min&quot;)
 </div>
 <div id="ggplot" class="section level3">
 <h3>GGPLOT</h3>
-<p>Ggplot es el paquete por excelencia para generar gráficos Para que se
-grafique con una curva de ajuste (línea de tendencia en Excel) se debe
-generar otro dataframe de estos datos y después incorporarlos en el
-gráfico.</p>
+<p>Ggplot es el paquete por excelencia para generar gráficos.</p>
+<p>Para que se grafique con una curva de ajuste (línea de tendencia en
+Excel) se debe generar otro dataframe de estos datos y después
+incorporarlos en el gráfico.</p>
 <pre class="r"><code># Visualizar gráfico con ggplot2
 library(ggplot2)
 
