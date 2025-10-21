@@ -21,11 +21,11 @@ máxima). Para descargar el código en R, entre en la url  <https://github.com/m
 
 Instalar librerías si es que no se tienen ya instaladas
 
-La librería drc es para modelos no lineales de dosis-respuesta La
-librería renz es solamente para cinetica enzimatica La librería
-tidyverse y dplyr es de uso común para múltiples funciones Y la librería
-ggplot2 es una de las más usadas para visualizaci´no de datos y
-generación de plots
+La librería drc es para modelos no lineales de dosis-respuesta.
+La librería renz es solamente para cinetica enzimatica.
+La librería tidyverse y dplyr es de uso común para múltiples funciones.
+Y la librería ggplot2 es una de las más usadas para visualizaci´no de datos y
+generación de plots.
 
 ```{r}
 # install.packages("drc")
@@ -66,7 +66,7 @@ datos_2 <- datos_1 |>
 ```
 
 Calculamos la media y la desviación estándar para poder colocarlas en
-nuestro gráfico de Michaelis-Menten
+nuestro gráfico de Michaelis-Menten.
 
 ```{r}
 # Calcular la media y la desviacion estandar
@@ -141,8 +141,8 @@ dir.MM(datos_2[ , c(1,3)], unit_S = "mM", unit_v = "nM/min")
 
 ### GGPLOT
 
-Ggplot es el paquete por excelencia para generar gráficos Para que se
-grafique con una curva de ajuste (línea de tendencia en Excel) se debe
+Ggplot es el paquete por excelencia para generar gráficos.
+Para que se grafique con una curva de ajuste (línea de tendencia en Excel) se debe
 generar otro dataframe de estos datos y después incorporarlos en el
 gráfico.
 
@@ -191,3 +191,4 @@ legend("bottomright",
        col = c("black", "green3"),
        bty = "n")
 ```
+
